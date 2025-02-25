@@ -1,0 +1,143 @@
+/* Ensure full height for sticky footer */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Flex layout to push footer to bottom */
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Roboto', sans-serif;
+  background: url('images/bg.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: white;
+  position: relative;
+  min-height: 100vh;
+}
+
+/* Overlay to blend gradient over the background */
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(12, 4, 36, 0.8), rgba(106, 5, 114, 0.8));
+  z-index: -1;
+}
+
+.container {
+  flex: 1;
+  width: 95%;
+  margin: 30px auto;
+  position: relative;
+  z-index: 1;
+}
+
+.navbar {
+  background-color: rgba(64, 20, 140, 0.6);
+  padding: 10px;
+}
+
+.brand-logo {
+  font-size: 26px;
+  font-weight: bold;
+}
+
+/* Card with glass effect */
+.large-card {
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+/* Input & Output Boxes */
+.input-box,
+.output-box {
+  height: 400px;
+  width: 100%;
+  border: 2px solid #ddd;
+  padding: 15px;
+  font-size: 18px;
+  overflow-y: auto;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  border-radius: 10px;
+}
+
+.input-box textarea {
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: white;
+  font-size: 18px;
+  resize: none;
+  padding: 10px;
+}
+
+textarea::placeholder {
+  color: #ddd;
+}
+
+/* Buttons */
+.btn {
+  width: 100%;
+  margin-top: 10px;
+  font-size: 18px;
+  border-radius: 6px;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn:hover {
+  opacity: 0.85;
+  transform: scale(1.05);
+}
+
+/* Sticky Footer */
+.footer {
+  background-color: rgba(74, 20, 140, 0.9);
+  color: white;
+  padding: 15px 0;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 1000; /* Ensure footer stays on top */
+}
+
+.footer-link {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+  display: inline-flex; /* Better alignment */
+  align-items: center;
+  padding: 8px 12px; /* Add clickable padding */
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+
+
+/* Prevent SVG from intercepting clicks */
+.linkedin-icon,
+.github-icon {
+  pointer-events: none;
+  margin-right: 8px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 100%;
+    padding: 10px;
+  }
+  .footer {
+    text-align: center;
+  }
+}
