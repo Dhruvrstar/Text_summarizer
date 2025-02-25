@@ -4,6 +4,9 @@
 #### Desktop Version
 <img alt="desktop" src="./public/images/output/desktop.png" >  
 
+#### Working video
+link:-https://youtu.be/ChNqr1DO_ms
+
 
 ## How to run locally?
 1. Clone the repo
